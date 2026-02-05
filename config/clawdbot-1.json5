@@ -34,13 +34,16 @@
     }
   },
   "commands": {
-    "native": "auto",
-    "nativeSkills": "auto"
+    "native": false,
+    "nativeSkills": false
   },
   "channels": {
     "telegram": {
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
       "enabled": true,
-      "allowFrom": ["*"]
+      "allowFrom": ["*"],
+      "groupPolicy": "open",
+      "dmPolicy": "open"
     }
   },
   "messages": {
@@ -89,5 +92,9 @@
   "meta": {
     "lastTouchedVersion": "2026.2.2",
     "lastTouchedAt": "2026-02-05T16:35:00.000Z"
+  },
+  "logging": {
+    "level": "debug",
+    "consoleLevel": "debug"
   }
 }

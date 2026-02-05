@@ -34,13 +34,16 @@
     }
   },
   "commands": {
-    "native": "auto",
-    "nativeSkills": "auto"
+    "native": false,
+    "nativeSkills": false
   },
   "channels": {
     "telegram": {
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
       "enabled": true,
-      "allowFrom": ["*"]
+      "allowFrom": ["*"],
+      "groupPolicy": "open",
+      "dmPolicy": "open"
     }
   },
   "messages": {
