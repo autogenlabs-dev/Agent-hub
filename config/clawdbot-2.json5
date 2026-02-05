@@ -15,9 +15,8 @@
         "tools": {
           "web": {
             "search": {
-              "enabled": true,
-              "provider": "brave",
-              "apiKey": "${BRAVE_API_KEY}"
+              "enabled": false,
+              "provider": "brave"
             }
           }
         }
