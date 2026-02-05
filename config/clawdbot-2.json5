@@ -6,6 +6,20 @@
         "name": "Worker",
         "model": {
           "primary": "openai/glm-4.7"
+        },
+        "memorySearch": {
+          "enabled": true,
+          "provider": "openai",
+          "model": "embedding-3"
+        },
+        "tools": {
+          "web": {
+            "search": {
+              "enabled": true,
+              "provider": "brave",
+              "apiKey": "${BRAVE_API_KEY}"
+            }
+          }
         }
       }
     ],

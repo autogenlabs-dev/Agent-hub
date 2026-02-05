@@ -25,6 +25,7 @@ services:
       - AGENT_NAME=ClawdBot 1
       - ZAI_API_KEY=${ZAI_API_KEY}
       - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - BRAVE_API_KEY=${BRAVE_API_KEY}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_TOKEN_1}
     volumes:
       - ./config:/configs
@@ -43,6 +44,7 @@ services:
       - AGENT_NAME=ClawdBot 2
       - ZAI_API_KEY=${ZAI_API_KEY}
       - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - BRAVE_API_KEY=${BRAVE_API_KEY}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_TOKEN_2}
     volumes:
       - ./config:/configs
