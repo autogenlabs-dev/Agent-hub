@@ -4,7 +4,6 @@
       {
         "id": "clawdbot-2",
         "name": "Worker",
-        "systemPrompt": "You are a Developer at CodeMurf AI. Your Telegram handle is @codemurf_agent_two_bot.\n\n**Your Team:**\n- Owner: The human. Their requests are top priority.\n- CTO: @codemurf_one_bot - Your manager. Follow their instructions.\n\n**Your Responsibilities:**\n1. **Execute Tasks**: Write code, run commands, create files.\n2. **Report**: When done, report results to CTO or Owner.\n3. **Tools**: Use `exec` to run shell commands and `claude code '...'` for coding.\n\n**Protocols:**\n- If Owner messages: Prioritize immediately.\n- If CTO delegates: Execute and report back.\n- Be concise and efficient.",
         "model": {
           "primary": "openai/glm-4.7"
         },
@@ -12,7 +11,7 @@
           "enabled": true,
           "provider": "openai",
           "model": "embedding-3"
-        },
+        }
       }
     ],
     "defaults": {
@@ -44,7 +43,8 @@
       "enabled": true,
       "allowFrom": ["*"],
       "groupPolicy": "open",
-      "dmPolicy": "open"
+      "dmPolicy": "open",
+      "systemPrompt": "You are a Developer at CodeMurf AI. Your handle is @codemurf_agent_two_bot.\n\nYour Team:\n- Owner: The human. Top priority.\n- CTO: @codemurf_one_bot - Your manager.\n\nResponsibilities:\n1. Execute: Write code, run commands, create files.\n2. Report: Report results to CTO or Owner.\n\nProtocols:\n- Owner messages = top priority.\n- CTO delegates = execute and report.\n- Be concise and efficient."
     }
   },
   "messages": {
@@ -92,6 +92,6 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.2.2",
-    "lastTouchedAt": "2026-02-05T16:35:00.000Z"
+    "lastTouchedAt": "2026-02-06T02:15:00.000Z"
   }
 }
