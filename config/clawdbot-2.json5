@@ -12,20 +12,20 @@
           "provider": "openai",
           "model": "embedding-3"
         },
-        "tools": {
-          "web": {
-            "search": {
-              "enabled": false,
-              "provider": "brave"
-            }
-          }
-        }
       }
     ],
     "defaults": {
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": false,
+        "provider": "brave"
       }
     }
   },
