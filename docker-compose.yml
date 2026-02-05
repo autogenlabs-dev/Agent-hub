@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/agent_communication.db:/app/agent_communication.db
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  clawdbot-1:
+    build:
+      context: ./openclaw
+      dockerfile: Dockerfile
+    command: ["node", "dist/index.js", "gateway", "--allow-unconfigured"]
+    depends_on:
+      - backend
+    environment:
+      - OPENCLAW_CONFIG_PATH=/configs/clawdbot-1.json5
+      - OPENCLAW_GATEWAY_TOKEN
+      - AGENT_NAME=ClawdBot 1
+      - ZAI_API_KEY=${ZAI_API_KEY}
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_TOKEN_1}
+    volumes:
+      - ./config:/configs
+
+
+  clawdbot-2:
+    build:
+      context: ./openclaw
+      dockerfile: Dockerfile
+    command: ["node", "dist/index.js", "gateway", "--allow-unconfigured"]
+    depends_on:
+      - backend
+    environment:
+      - OPENCLAW_CONFIG_PATH=/configs/clawdbot-2.json5
+      - OPENCLAW_GATEWAY_TOKEN
+      - AGENT_NAME=ClawdBot 2
+      - ZAI_API_KEY=${ZAI_API_KEY}
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_TOKEN_2}
+    volumes:
+      - ./config:/configs
+

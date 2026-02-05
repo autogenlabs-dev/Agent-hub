@@ -1,0 +1,33 @@
+{
+  agents: {
+    list: [
+      {
+        id: "clawdbot-2",
+        name: "Worker",
+        model: {
+            primary: "openai/gpt-4o",
+        },
+      }
+    ]
+  },
+  channels: {
+    discord: {
+      enabled: true,
+      token: "${DISCORD_TOKEN}", // User to provide via env var
+      allowBots: true,
+      guilds: {
+        "${DISCORD_GUILD_ID}": {
+          channels: {
+            "${DISCORD_CHANNEL_ID}": {
+              enabled: true,
+              allow: true,
+              toolsBySender: {
+                "clawdbot-1": { allow: ["*"] } // Allow Manager to trigger tools
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

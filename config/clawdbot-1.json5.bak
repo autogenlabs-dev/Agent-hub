@@ -1,0 +1,35 @@
+{
+  agents: {
+    list: [
+      {
+        id: "clawdbot-1",
+        name: "Task Manager",
+        model: {
+            primary: "openai/gpt-4o",
+        },
+      }
+    ]
+  },
+  channels: {
+    discord: {
+      enabled: true,
+      token: "${DISCORD_TOKEN}", // User to provide via env var
+      // Enable bot-to-bot communication so agents can talk to each other
+      allowBots: true, 
+      guilds: {
+        "${DISCORD_GUILD_ID}": {
+          channels: {
+            "${DISCORD_CHANNEL_ID}": {
+              enabled: true,
+              allow: true,
+              // Ensure this agent listens to the other agent
+              toolsBySender: {
+                "clawdbot-2": { allow: ["*"] } // Allow Worker to trigger tools if needed, or just chat
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

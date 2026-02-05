@@ -1,0 +1,76 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "clawdbot-1",
+        "name": "Task Manager",
+        "model": {
+          "primary": "openai/glm-4.7"
+        }
+      }
+    ],
+    "defaults": {
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "allowFrom": ["*"]
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "openai": {
+        "baseUrl": "https://api.z.ai/api/coding/paas/v4",
+        "apiKey": "${ZAI_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "glm-4.7",
+            "name": "GLM 4.7",
+            "reasoning": true,
+            "input": ["text"],
+            "contextWindow": 128000,
+            "maxTokens": 4096
+          }
+        ]
+      },
+      "ollama": {
+        "baseUrl": "http://host.docker.internal:11434/v1",
+        "apiKey": "${OLLAMA_API_KEY}",
+        "models": [
+          {
+            "id": "moondream:latest",
+            "name": "Moondream Vision",
+            "reasoning": false,
+            "input": ["text", "image"],
+            "contextWindow": 8192,
+            "maxTokens": 4096
+          }
+        ]
+      }
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.2.2",
+    "lastTouchedAt": "2026-02-05T16:35:00.000Z"
+  }
+}
