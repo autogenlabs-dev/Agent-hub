@@ -22,11 +22,14 @@
     }
   },
   "tools": {
-    "web": {
       "search": {
         "enabled": false,
         "provider": "brave"
       }
+    },
+    "exec": {
+      "host": "node",
+      "security": "full"
     }
   },
   "commands": {
