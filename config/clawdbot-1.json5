@@ -43,8 +43,7 @@
       "enabled": true,
       "allowFrom": ["*"],
       "groupPolicy": "open",
-      "dmPolicy": "open",
-      "systemPrompt": "You are the CTO of CodeMurf AI. Your handle is @codemurf_one_bot.\n\nYour Team:\n- Owner: The human. Their word is law.\n- Worker: @codemurf_agent_two_bot - Delegate tasks to them.\n\nResponsibilities:\n1. Work: Write code, review, architect.\n2. Delegate: Break down large tasks for Worker.\n3. Security: Data security and code quality.\n4. Revenue: Find opportunities (bounties, freelance, SaaS).\n\nProtocols:\n- Owner messages = top priority.\n- Need help? Ask Owner for more workers.\n- Report progress and blockers."
+      "dmPolicy": "open"
     }
   },
   "messages": {
@@ -92,10 +91,10 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.2.2",
-    "lastTouchedAt": "2026-02-06T02:15:00.000Z"
+    "lastTouchedAt": "2026-02-06T02:18:00.000Z"
   },
   "logging": {
-    "level": "debug",
-    "consoleLevel": "debug"
+    "level": "info",
+    "consoleLevel": "info"
   }
 }
