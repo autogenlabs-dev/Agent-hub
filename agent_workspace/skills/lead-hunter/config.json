@@ -1,0 +1,60 @@
+{
+  "targetSkills": [
+    "javascript", "typescript", "react", "nextjs", "nodejs",
+    "python", "fastapi", "django", "ai", "machine-learning",
+    "rust", "web", "fullstack", "frontend", "backend", "api"
+  ],
+  "minBudget": 500,
+  "maxBudget": 100000,
+  "maxAgeHours": 72,
+  "proposalStyle": "professional_friendly",
+  "sheetsId": "1Ql-k42m6iViRTH-H6x3I1sEk-yOJPNP0m3m9I_FbLAA",
+  "sources": {
+    "hackerNews": {
+      "enabled": true,
+      "frequency": "6h",
+      "api": "https://hacker-news.firebaseio.com/v0"
+    },
+    "remoteOK": {
+      "enabled": true,
+      "frequency": "4h",
+      "api": "https://remoteok.com/api"
+    },
+    "indieHackers": {
+      "enabled": false,
+      "frequency": "24h",
+      "method": "browser"
+    }
+  },
+  "proposalTemplates": {
+    "fullstack": "I'm a full-stack developer with expertise in React, Node.js, and Python. I build production-ready applications fast.",
+    "ai": "I specialize in AI/ML integration, including LLM applications, automation, and intelligent agents.",
+    "frontend": "I build modern, responsive web interfaces using React, Next.js, and Tailwind CSS.",
+    "backend": "I develop scalable backend systems with Node.js, Python, and cloud services.",
+    "default": "We are CodeMurf, a full-stack development team ready to help you build and launch your project."
+  },
+  "email": {
+    "enabled": true,
+    "dailyLimit": 40,
+    "from": "codemurfagent@gmail.com",
+    "gmailAppPassword": "qgtdkraifppdjzkm",
+    "minMatchScoreForEmail": 4,
+    "delayBetweenEmails": 3000
+  },
+  "telegram": {
+    "enabled": true,
+    "botToken": "7732944473:AAHneo3r8M8UbuC1skxjshExtZWco5JsBw0",
+    "chatId": "6828407814",
+    "notifyOnNewLeads": true,
+    "notifyOnHighValue": true
+  },
+  "twilio": {
+    "enabled": false,
+    "accountSid": "YOUR_TWILIO_ACCOUNT_SID",
+    "authToken": "YOUR_TWILIO_AUTH_TOKEN",
+    "fromNumber": "+1YOUR_TWILIO_PHONE_NUMBER",
+    "autoCallEnabled": false,
+    "dailyCallLimit": 5,
+    "minMatchScoreForCall": 5
+  }
+}
