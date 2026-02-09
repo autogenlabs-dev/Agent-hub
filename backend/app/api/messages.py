@@ -17,6 +17,25 @@ async def send_message(
     """Send a message"""
     service = MessageService(db)
     message = await service.create_message(message_data)
+
+    # Broadcast to recipients via WebSocket (if any)
+    if message_data.recipients:
+        from app.websocket.connection_manager import manager
+        
+        payload = {
+            "event": "message:received",
+            "data": {
+                "id": str(message.id),
+                "sender_id": message.sender_id,
+                "content": message.content,
+                "message_type": message.message_type,
+                "created_at": message.created_at.isoformat(),
+                # Include task_id if present
+                "task_id": message.task_id if hasattr(message, "task_id") else None,
+            }
+        }
+        await manager.send_to_agents(payload, message_data.recipients)
+
     return message
 
 

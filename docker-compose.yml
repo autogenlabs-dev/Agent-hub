@@ -25,10 +25,24 @@ services:
       - AGENT_NAME=ClawdBot 1
       - ZAI_API_KEY=${ZAI_API_KEY}
       - OLLAMA_API_KEY=${OLLAMA_API_KEY}
-      - BRAVE_API_KEY=${BRAVE_API_KEY}
+      - YOU_API_KEY=${YOU_API_KEY}
+      - FIRECRAWL_API_KEY=${FIRECRAWL_API_KEY}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - VERCEL_TOKEN=${VERCEL_TOKEN}
+      - RENDER_TOKEN=${RENDER_TOKEN}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_TOKEN_1}
+      - BACKEND_URL=ws://backend:8000
     volumes:
       - ./config:/configs
+      - ./agent_workspace:/workspace
+      - ./clawdbot-data/bot-1/.openclaw:/home/node/.openclaw
+      - ./agent_workspace:/home/node/.openclaw/workspace
+      - c:/Users/Asus/.claude:/root/.claude
+      - /var/run/docker.sock:/var/run/docker.sock
 
 
   clawdbot-2:
@@ -44,8 +58,77 @@ services:
       - AGENT_NAME=ClawdBot 2
       - ZAI_API_KEY=${ZAI_API_KEY}
       - OLLAMA_API_KEY=${OLLAMA_API_KEY}
-      - BRAVE_API_KEY=${BRAVE_API_KEY}
+      - YOU_API_KEY=${YOU_API_KEY}
+      - FIRECRAWL_API_KEY=${FIRECRAWL_API_KEY}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - VERCEL_TOKEN=${VERCEL_TOKEN}
+      - RENDER_TOKEN=${RENDER_TOKEN}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_TOKEN_2}
+      - BACKEND_URL=ws://backend:8000
     volumes:
       - ./config:/configs
+      - ./agent_workspace:/workspace
+      - ./clawdbot-data/bot-2/.openclaw:/home/node/.openclaw
+      - ./agent_workspace:/home/node/.openclaw/workspace
+      - c:/Users/Asus/.claude:/root/.claude
+      - /var/run/docker.sock:/var/run/docker.sock
 
+  clawdbot-3:
+    build:
+      context: ./openclaw
+      dockerfile: Dockerfile
+    command: ["node", "dist/index.js", "gateway", "--allow-unconfigured"]
+    depends_on:
+      - backend
+    environment:
+      - OPENCLAW_CONFIG_PATH=/configs/clawdbot-3.json5
+      - OPENCLAW_GATEWAY_TOKEN
+      - AGENT_NAME=ClawdBot 3
+      - ZAI_API_KEY=${ZAI_API_KEY}
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - YOU_API_KEY=${YOU_API_KEY}
+      - FIRECRAWL_API_KEY=${FIRECRAWL_API_KEY}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - VERCEL_TOKEN=${VERCEL_TOKEN}
+      - RENDER_TOKEN=${RENDER_TOKEN}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_TOKEN_3}
+      - BACKEND_URL=ws://backend:8000
+    volumes:
+      - ./config:/configs
+      - ./agent_workspace:/workspace
+      - ./clawdbot-data/bot-3/.openclaw:/home/node/.openclaw
+      - ./agent_workspace:/home/node/.openclaw/workspace
+      - c:/Users/Asus/.claude:/root/.claude
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  memu-bot:
+    build:
+      context: ./memu-bot
+      dockerfile: Dockerfile
+    depends_on:
+      - backend
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_TOKEN_4}
+      - ZAI_API_KEY=${ZAI_API_KEY}
+      - ZAI_BASE_URL=https://api.z.ai/api/coding/paas/v4
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434/v1
+      - BACKEND_URL=http://backend:8000
+      - AGENT_NAME=MemU Bot
+      - YOU_API_KEY=${YOU_API_KEY}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+      - FIRECRAWL_API_KEY=${FIRECRAWL_API_KEY}
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agent_workspace:/workspace
+      - memu-data:/data
+
+volumes:
+  memu-data:
