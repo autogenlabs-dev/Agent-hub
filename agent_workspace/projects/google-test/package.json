@@ -1,0 +1,15 @@
+{
+  "name": "google-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test-google.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^171.4.0"
+  }
+}

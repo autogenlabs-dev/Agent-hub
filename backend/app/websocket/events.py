@@ -37,15 +37,27 @@ async def handle_agent_websocket(websocket: WebSocket, agent_id: str):
     except WebSocketDisconnect:
         logger.info(f"Agent {agent_id} disconnected")
         manager.disconnect(agent_id)
-        await manager.broadcast({
-            "event": "agent:left",
-            "data": {
-                "agent_id": agent_id
-            }
-        })
+        try:
+            await manager.broadcast({
+                "event": "agent:left",
+                "data": {
+                    "agent_id": agent_id
+                }
+            })
+        except Exception:
+            pass
     except Exception as e:
         logger.error(f"Error in agent websocket connection: {e}")
         manager.disconnect(agent_id)
+        try:
+            await manager.broadcast({
+                "event": "agent:left",
+                "data": {
+                    "agent_id": agent_id
+                }
+            })
+        except Exception:
+            pass
 
 
 async def process_agent_event(agent_id: str, data: dict, websocket: WebSocket):
@@ -56,7 +68,9 @@ async def process_agent_event(agent_id: str, data: dict, websocket: WebSocket):
     logger.info(f"Received event from agent {agent_id}: {event_type}")
     
     # Route events to appropriate handlers
-    if event_type == "agent:heartbeat":
+    if event_type == "agent:register":
+        logger.info(f"Agent {agent_id} registered: {event_data}")
+    elif event_type == "agent:heartbeat":
         await handle_heartbeat(agent_id, event_data)
     elif event_type == "message:send":
         await handle_message_send(agent_id, event_data)

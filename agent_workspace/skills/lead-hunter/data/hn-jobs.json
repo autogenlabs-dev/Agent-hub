@@ -1,0 +1,22 @@
+[
+  {
+    "id": 46778846,
+    "source": "hackernews",
+    "title": "Trayd (YC S23) is hiring senior engineers in NYC",
+    "text": "Trayd (YCS23) is building construction payroll + back office software. Payroll is one of the few domains where 99% accuracy is an F, so we obsess over correctness, reliability, and observability.<p>We recently hit a major growth milestone (57% month-over-month revenue growth, among other things), and we’re hiring senior engineers in NYC (on-site) to help scale the product and the systems behind it as volume ramps. You would be joining a small but mighty eng team, all based in NYC.<p>Stack: TypeScript, Node, Postgres, Prisma, React &amp; React Native.<p>URL: <a href=\"https:&#x2F;&#x2F;www.ycombinator.com&#x2F;companies&#x2F;trayd&#x2F;jobs&#x2F;1Ez3l4b-senior-fullstack-software-engineer\">https:&#x2F;&#x2F;www.ycombinator.com&#x2F;companies&#x2F;trayd&#x2F;jobs&#x2F;1Ez3l4b-sen...</a>",
+    "url": "https://news.ycombinator.com/item?id=46778846",
+    "postedAt": "2026-01-27T12:00:22.000Z",
+    "matchScore": 4,
+    "fetchedAt": "2026-02-07T20:39:52.147Z"
+  },
+  {
+    "id": 46667101,
+    "source": "hackernews",
+    "title": "Keystone (YC S25) Is Hiring",
+    "text": "Keystone builds infrastructure for autonomous coding agents. We give agents sandboxed environments that mirror production, event-based triggers (Sentry, Linear, GitHub), and verification workflows so they can ship code end-to-end— not just write it.\nWe&#x27;re hiring a founding engineer to work directly with me (solo founder) on core product. Stack is TypeScript, React (Next.js), Python, Postgres, Redis, AWS.<p>In-person in SoMa. $150K-$350K + 0.5-3% equity.<p><a href=\"https:&#x2F;&#x2F;www.workatastartup.com&#x2F;jobs&#x2F;88801\" rel=\"nofollow\">https:&#x2F;&#x2F;www.workatastartup.com&#x2F;jobs&#x2F;88801</a>",
+    "url": "https://news.ycombinator.com/item?id=46667101",
+    "postedAt": "2026-01-18T12:00:10.000Z",
+    "matchScore": 3,
+    "fetchedAt": "2026-02-07T20:39:56.028Z"
+  }
+]

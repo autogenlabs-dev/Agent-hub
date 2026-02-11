@@ -191,3 +191,86 @@ class TaskService:
             .order_by(Task.due_date.asc())
         )
         return result.scalars().all()
+    
+    async def get_next_task(self, agent_id: str) -> Optional[Task]:
+        """Get the next priority task assigned to this agent"""
+        result = await self.db.execute(
+            select(Task)
+            .join(TaskAssignment)
+            .where(
+                and_(
+                    TaskAssignment.agent_id == agent_id,
+                    Task.status.in_(["assigned", "pending"])
+                )
+            )
+            .order_by(Task.priority.asc(), Task.created_at.asc())
+            .limit(1)
+        )
+        return result.scalar_one_or_none()
+    
+    async def claim_task(self, task_id: str, agent_id: str) -> Optional[Task]:
+        """Worker claims and starts a task"""
+        task = await self.get_task(task_id)
+        if not task:
+            return None
+        
+        task.status = "in_progress"
+        
+        # Update assignment status if exists
+        result = await self.db.execute(
+            select(TaskAssignment).where(
+                and_(TaskAssignment.task_id == task_id, TaskAssignment.agent_id == agent_id)
+            )
+        )
+        assignment = result.scalar_one_or_none()
+        if assignment:
+            assignment.status = "in_progress"
+        
+        await self.db.commit()
+        await self.db.refresh(task)
+        return task
+    
+    async def fail_task(self, task_id: str, agent_id: str, error: str, retry_count: int = 0) -> Optional[Task]:
+        """Mark task as failed with error details"""
+        task = await self.get_task(task_id)
+        if not task:
+            return None
+        
+        # Check retry logic (max 3 retries)
+        current_retry = task.requirements.get("retry_count", 0) if task.requirements else 0
+        if current_retry < 3:
+            task.status = "pending"  # Allow retry
+            task.requirements = {**(task.requirements or {}), "retry_count": current_retry + 1, "last_error": error}
+        else:
+            task.status = "failed"
+            task.requirements = {**(task.requirements or {}), "retry_count": current_retry, "last_error": error}
+        
+        await self.db.commit()
+        await self.db.refresh(task)
+        return task
+    
+    async def get_agent_work_queue(self, agent_id: str) -> dict:
+        """Get full work queue for an agent: tasks + recommendations"""
+        # Get assigned tasks
+        assigned_tasks = await self.get_agent_tasks(agent_id, status="assigned")
+        in_progress_tasks = await self.get_agent_tasks(agent_id, status="in_progress")
+        
+        # Get unassigned pending tasks (available to claim)
+        pending_result = await self.db.execute(
+            select(Task)
+            .where(Task.status == "pending")
+            .order_by(Task.priority.asc(), Task.created_at.asc())
+            .limit(5)
+        )
+        pending_tasks = pending_result.scalars().all()
+        
+        recommendations = []
+        if not assigned_tasks and not in_progress_tasks and not pending_tasks:
+            recommendations.append("No tasks available. Consider: revenue ops, code review, or await CTO delegation.")
+        
+        return {
+            "assigned_tasks": assigned_tasks,
+            "in_progress_tasks": in_progress_tasks,
+            "available_tasks": pending_tasks,
+            "recommendations": recommendations
+        }

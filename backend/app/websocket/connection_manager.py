@@ -48,7 +48,9 @@ class ConnectionManager:
     async def broadcast(self, message: dict, exclude_agent_id: Optional[str] = None):
         """Broadcast a message to all connected agents"""
         disconnected_agents = []
-        for agent_id, connection in self.active_connections.items():
+        # Copy items to avoid "dictionary changed size during iteration"
+        connections_snapshot = list(self.active_connections.items())
+        for agent_id, connection in connections_snapshot:
             if exclude_agent_id and agent_id == exclude_agent_id:
                 continue
             try:
@@ -56,7 +58,7 @@ class ConnectionManager:
             except Exception as e:
                 logger.error(f"Error broadcasting to agent {agent_id}: {e}")
                 disconnected_agents.append(agent_id)
-        
+
         # Clean up disconnected agents
         for agent_id in disconnected_agents:
             self.disconnect(agent_id)

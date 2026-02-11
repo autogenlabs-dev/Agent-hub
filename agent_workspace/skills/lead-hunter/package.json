@@ -1,0 +1,15 @@
+{
+  "name": "lead-hunter",
+  "version": "1.0.0",
+  "description": "Lead Hunter - Find and apply to freelance jobs for CodeMurf AI",
+  "main": "index.js",
+  "scripts": {
+    "hunt": "node index.js",
+    "hn": "node index.js hn",
+    "remoteok": "node index.js remoteok"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0"
+  }
+}

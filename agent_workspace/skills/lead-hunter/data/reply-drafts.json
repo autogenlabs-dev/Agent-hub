@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1770378993140,
+    "timestamp": "2026-02-06T11:56:33.140Z",
+    "clientEmail": {
+      "from": "client@example.com",
+      "subject": "Re: Quick thought on your tech stack",
+      "preview": "Hi Abhishek,\n\nThanks for reaching out! We're interested in discussing further.\n\nWhat's your hourly rate? And do you have experience with React Native?\n\nLooking forward to hearing from you.\n\nBest,\nJohn"
+    },
+    "intent": "interested",
+    "draft": {
+      "subject": "Re: Re: Quick thought on your tech stack",
+      "body": "Hi,\n\nThanks for getting back — excited to connect!\n\nTo make sure I can propose something useful:\n\n1. What's the main problem you're trying to solve?\n2. Do you have a rough timeline in mind?\n3. Any budget range you're working within?\n\nHappy to hop on a quick 15-min call, or we can keep things async if that's easier for you.\n\nWhen works best this week?\n\nBest,\nAbhishek"
+    },
+    "status": "pending_review"
+  },
+  {
+    "id": 1770379079420,
+    "timestamp": "2026-02-06T11:57:59.420Z",
+    "clientEmail": {
+      "from": "\"Abhishek\" <autogencodelabs@gmail.com>",
+      "subject": "Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "preview": "Hi Abhishek, Thanks for reaching out! I'm interested in learning more about\nyour services. Do you have availability for a React project starting next\nmonth? Best, John\n\nOn Fri, Feb 6, 2026 at 5:10 PM "
+    },
+    "intent": "interested",
+    "draft": {
+      "subject": "Re: Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "body": "Hi,\n\nThanks for getting back — excited to connect!\n\nTo make sure I can propose something useful:\n\n1. What's the main problem you're trying to solve?\n2. Do you have a rough timeline in mind?\n3. Any budget range you're working within?\n\nHappy to hop on a quick 15-min call, or we can keep things async if that's easier for you.\n\nWhen works best this week?\n\nBest,\nAbhishek"
+    },
+    "status": "pending_review"
+  },
+  {
+    "id": 1770379369270,
+    "timestamp": "2026-02-06T12:02:49.270Z",
+    "clientEmail": {
+      "from": "\"Abhishek\" <autogencodelabs@gmail.com>",
+      "subject": "Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "preview": "Hi Abhishek, Thanks for reaching out! I'm interested in learning more about\nyour services. Do you have availability for a React project starting next\nmonth? Best, John\n\nOn Fri, Feb 6, 2026 at 5:10 PM "
+    },
+    "intent": "interested",
+    "draft": {
+      "subject": "Re: Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "body": "Hi,\n\nThanks for getting back — excited to connect!\n\nTo make sure I can propose something useful:\n\n1. What's the main problem you're trying to solve?\n2. Do you have a rough timeline in mind?\n3. Any budget range you're working within?\n\nHappy to hop on a quick 15-min call, or we can keep things async if that's easier for you.\n\nWhen works best this week?\n\nBest,\nAbhishek"
+    },
+    "status": "pending_review"
+  },
+  {
+    "id": 1770379608456,
+    "timestamp": "2026-02-06T12:06:48.456Z",
+    "clientEmail": {
+      "from": "client@example.com",
+      "subject": "Re: Quick thought on your tech stack",
+      "preview": "Hi Abhishek,\n\nThanks for reaching out! We're interested in discussing further.\n\nWhat's your hourly rate? And do you have experience with React Native?\n\nLooking forward to hearing from you.\n\nBest,\nJohn"
+    },
+    "intent": "interested",
+    "draft": {
+      "subject": "Re: Re: Quick thought on your tech stack",
+      "body": "Hi,\n\nThanks for getting back — excited to connect!\n\nTo put together a solid proposal for you, could you share:\n\n1. What's the main problem you're trying to solve?\n2. Do you have a rough timeline or deadline?\n3. Any budget range you're working within?\n\nAlso, what's the best way to reach you for a quick chat?\n→ Phone/WhatsApp: _______________\n→ Or happy to do a Zoom/Google Meet\n\nI typically like to do a 15-min discovery call to make sure I fully understand your needs before proposing anything.\n\nWhat time works this week?\n\nBest,\nAbhishek\nCodeMurf | codemurf.com\n📞 Available for calls: +91 XXXX (WhatsApp preferred)"
+    },
+    "status": "pending_review"
+  },
+  {
+    "id": 1770379669216,
+    "timestamp": "2026-02-06T12:07:49.216Z",
+    "clientEmail": {
+      "from": "\"Abhishek\" <autogencodelabs@gmail.com>",
+      "subject": "Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "preview": "Hi Abhishek, Thanks for reaching out! I'm interested in learning more about\nyour services. Do you have availability for a React project starting next\nmonth? Best, John\n\nOn Fri, Feb 6, 2026 at 5:10 PM "
+    },
+    "intent": "interested",
+    "draft": {
+      "subject": "Re: Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "body": "Hi,\n\nThanks for getting back — excited to connect!\n\nTo make sure I can propose something useful:\n\n1. What's the main problem you're trying to solve?\n2. Do you have a rough timeline in mind?\n3. Any budget range you're working within?\n\nHappy to hop on a quick 15-min call, or we can keep things async if that's easier for you.\n\nWhen works best this week?\n\nBest,\nAbhishek"
+    },
+    "status": "pending_review"
+  },
+  {
+    "id": 1770379969557,
+    "timestamp": "2026-02-06T12:12:49.557Z",
+    "clientEmail": {
+      "from": "\"Abhishek\" <autogencodelabs@gmail.com>",
+      "subject": "Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "preview": "Hi Abhishek, Thanks for reaching out! I'm interested in learning more about\nyour services. Do you have availability for a React project starting next\nmonth? Best, John\n\nOn Fri, Feb 6, 2026 at 5:10 PM "
+    },
+    "intent": "interested",
+    "draft": {
+      "subject": "Re: Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "body": "Hi,\n\nThanks for getting back — excited to connect!\n\nTo make sure I can propose something useful:\n\n1. What's the main problem you're trying to solve?\n2. Do you have a rough timeline in mind?\n3. Any budget range you're working within?\n\nHappy to hop on a quick 15-min call, or we can keep things async if that's easier for you.\n\nWhen works best this week?\n\nBest,\nAbhishek"
+    },
+    "status": "pending_review"
+  },
+  {
+    "id": 1770380122482,
+    "timestamp": "2026-02-06T12:15:22.482Z",
+    "clientEmail": {
+      "from": "\"Abhishek\" <autogencodelabs@gmail.com>",
+      "subject": "Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "preview": "Hi Abhishek, Thanks for reaching out! I'm interested in learning more about\nyour services. Do you have availability for a React project starting next\nmonth? Best, John\n\nOn Fri, Feb 6, 2026 at 5:10 PM "
+    },
+    "intent": "interested",
+    "draft": {
+      "subject": "Re: Re: Senior Full Stack Developer .NET Angular - Experienced Developer Available",
+      "body": "Hi,\n\nThanks for getting back — excited to connect!\n\nTo put together a solid proposal for you, could you share:\n\n1. What's the main problem you're trying to solve?\n2. Do you have a rough timeline or deadline?\n3. Any budget range you're working within?\n\nAlso, what's the best way to reach you for a quick chat?\n→ Phone/WhatsApp: _______________\n→ Or happy to do a Zoom/Google Meet\n\nI typically like to do a 15-min discovery call to make sure I fully understand your needs before proposing anything.\n\nWhat time works this week?\n\nBest,\nAbhishek\nCodeMurf | codemurf.com\n📞 Available for calls: +91 XXXX (WhatsApp preferred)"
+    },
+    "status": "pending_review"
+  }
+]
